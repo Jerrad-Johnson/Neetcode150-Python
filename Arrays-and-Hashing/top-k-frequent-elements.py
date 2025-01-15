@@ -14,32 +14,5 @@ def topKFrequent(nums, k):
     answerSet = topK[-k:];
     return([entry[0] for entry in answerSet]);
 
-
-
-    #
-    # for entry in map:
-    #     answers.append([entry, map[entry]]);
-    #     if len(answers) == k:
-    #         break;
-    # print(answers);
-    #
-    # for entry in answers:
-    #     del(map[entry[0]]);
-    #
-    # for entry in map:
-    #     currentAnswer = answers[-1];
-    #     currentMap = map[entry]
-    #     if currentAnswer[1] < currentMap:
-    #         answers.append([entry, map[entry]]);
-    #         answers.pop(0);
-    #
-    # formatted = [];
-
-
-    # for entry in answers:
-    #     formatted.append(entry[0]);
-
-    return ;
-
 nums = [4,1,-1,2,-1,2,3];
 print(topKFrequent(nums, 2));
