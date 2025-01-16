@@ -2,6 +2,7 @@ def topKFrequent(nums, k):
     lengthOfArray = len(nums);
     answerSet = [];
     currPos = {};
+    temp = None;
 
     for _ in range(lengthOfArray):
         answerSet.append([]);
