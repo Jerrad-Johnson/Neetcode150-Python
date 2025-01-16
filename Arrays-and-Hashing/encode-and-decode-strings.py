@@ -4,6 +4,4 @@ class Solution:
     def decode(str):
         return(str.split('SHOULDBECSV'));
 
-
-encoded = Solution.encode(["neet","code","love","you"]);
-print(Solution.decode(encoded));
+print(Solution.decode(Solution.encode(["neet","code","love","you"])));
