@@ -1,26 +1,20 @@
 def topKFrequent(nums, k):
-    lengthOfArray = len(nums);
-    answerSet = [];
-    currPos = {};
-    temp = None;
+    count = {};
+    answerSet = [[] for i in range(len(nums) + 1)]
+    kAnswers = [];
 
-    for _ in range(lengthOfArray):
-        answerSet.append([]);
+    for n in nums:
+        count[n] = 1 + count.get(n, 0);
 
-    for num in nums:
-        if num not in currPos:
-            currPos[num] = 1;
-        else:
-            currPos[num] += 1;
+    for item, freq in count.items():
+        answerSet[freq].append(item);
 
-    for num in currPos:
-        answerSet[currPos[num]].append(num);
+    for i in range(len(answerSet) -1, 0, -1):
+        for n in answerSet[i]:
+            kAnswers.append(n);
+            if len(kAnswers) == k:
+                return kAnswers;
 
-    while answerSet and not answerSet[-1]:
-        answerSet.pop();
-
-    flattened = [item for sublist in answerSet for item in sublist];
-    return(flattened[-k:]);
 
 nums = [4,1,-1,2,-1,2,3];
 print(topKFrequent(nums, 2));
